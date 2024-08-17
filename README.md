@@ -1,6 +1,6 @@
 <p align="center"><img align="center" width="280" src="./src/images/logo-dark.svg"/></p>
 <p align="center"><img align="center" width="280" src="./src/images/logo-light.svg#gh-light-mode-only"/></p>
-<h3 align="center"></h3>
+<h3 align="center">Notekeeper - Your Everyday Notes | Effortless Note-Taking</h3>
 <hr>
 
 <div align="center">
@@ -13,7 +13,7 @@
 <img src="https://custom-icon-badges.demolab.com/github/last-commit/amit712singhal/Luffy-Logs?label=last%20commit&labelColor=302d41&color=ffefd5&logoColor=white&logo=people&style=for-the-badge"/>
 </div>
 
-<!-- Sky Now is a web application that provides real-time weather updates based on your current location. It gives you detailed weather information including temperature, humidity, wind speed, and more. -->
+Notekeeper is a simple note-taking app that helps you to take notes effortlessly.
 
 Check out the live demo [here](https://amit712singhal.github.io/Luffy-Logs/).
 
