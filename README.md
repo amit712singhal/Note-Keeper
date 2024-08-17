@@ -33,6 +33,7 @@ Check out the live demo [here](https://amit712singhal.github.io/Luffy-Logs/).
 - [Contributing](#contributing)
 - [Connect with Me](#connect-with-me)
 - [License](#license)
+
 </details>
 
 ## Installation
