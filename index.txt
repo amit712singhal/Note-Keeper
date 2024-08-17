@@ -1,17 +1,3 @@
-#---------- MAIN ----------#
-
-Good Morning
-Sat, Sep 22 2023
-
-aria-label = Toggle theme
-<span class="material-symbols-rounded dark-icon" aria-hidden="true">dark_mode</span>
-<span class="material-symbols-rounded light-icon" aria-hidden="true">light_mode</span>
-
-aria-label = Open menu
-<span class="material-symbols-rounded" aria-hidden="true">menu</span>
-
-My Notebook
-
 Note title
 
 20 min ago
