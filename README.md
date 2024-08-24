@@ -4,18 +4,18 @@
 <hr>
 
 <div align="center">
-<img src="https://custom-icon-badges.demolab.com/github/stars/amit712singhal/Luffy-Logs?label=Stars&labelColor=302d41&color=add8e6&logoColor=white&logo=star&style=for-the-badge"  />
-<img src="https://custom-icon-badges.demolab.com/github/issues/amit712singhal/Luffy-Logs?label=Issues&labelColor=302d41&color=90ee90&logoColor=white&logo=issue&style=for-the-badge"  />
-<img src="https://custom-icon-badges.demolab.com/github/issues-pr/amit712singhal/Luffy-Logs?&label=Pull%20requests&labelColor=302d41&color=ffb6c1&logoColor=white&logo=git-pull-request&style=for-the-badge"  />
-<img src="https://custom-icon-badges.demolab.com/github/forks/amit712singhal/Luffy-Logs?&label=forks&labelColor=302d41&color=ffa07a&logoColor=white&logo=fork&style=for-the-badge"  />
-<img src="https://custom-icon-badges.demolab.com/github/contributors/amit712singhal/Luffy-Logs?label=Contributors&labelColor=302d41&color=e6e6fa&logoColor=white&logo=people&style=for-the-badge"/>
-<img src="https://custom-icon-badges.demolab.com/github/license/amit712singhal/Luffy-Logs?label=LICENSE&labelColor=302d41&color=f0e68c&logoColor=white&logo=people&style=for-the-badge"/>
-<img src="https://custom-icon-badges.demolab.com/github/last-commit/amit712singhal/Luffy-Logs?label=last%20commit&labelColor=302d41&color=ffefd5&logoColor=white&logo=people&style=for-the-badge"/>
+<img src="https://custom-icon-badges.demolab.com/github/stars/amit712singhal/Note-Keeper?label=Stars&labelColor=302d41&color=add8e6&logoColor=white&logo=star&style=for-the-badge"  />
+<img src="https://custom-icon-badges.demolab.com/github/issues/amit712singhal/Note-Keeper?label=Issues&labelColor=302d41&color=90ee90&logoColor=white&logo=issue&style=for-the-badge"  />
+<img src="https://custom-icon-badges.demolab.com/github/issues-pr/amit712singhal/Note-Keeper?&label=Pull%20requests&labelColor=302d41&color=ffb6c1&logoColor=white&logo=git-pull-request&style=for-the-badge"  />
+<img src="https://custom-icon-badges.demolab.com/github/forks/amit712singhal/Note-Keeper?&label=forks&labelColor=302d41&color=ffa07a&logoColor=white&logo=fork&style=for-the-badge"  />
+<img src="https://custom-icon-badges.demolab.com/github/contributors/amit712singhal/Note-Keeper?label=Contributors&labelColor=302d41&color=e6e6fa&logoColor=white&logo=people&style=for-the-badge"/>
+<img src="https://custom-icon-badges.demolab.com/github/license/amit712singhal/Note-Keeper?label=LICENSE&labelColor=302d41&color=f0e68c&logoColor=white&logo=people&style=for-the-badge"/>
+<img src="https://custom-icon-badges.demolab.com/github/last-commit/amit712singhal/Note-Keeper?label=last%20commit&labelColor=302d41&color=ffefd5&logoColor=white&logo=people&style=for-the-badge"/>
 </div>
 
 Notekeeper is a simple note-taking app that helps you to take notes effortlessly.
 
-Check out the live demo [here](https://amit712singhal.github.io/Luffy-Logs/).
+Check out the live demo [here](https://amit712singhal.github.io/Note-Keeper/).
 
 ## Preview
 
@@ -43,8 +43,8 @@ To run this project locally, follow these steps:
 1. **Clone the repository**
 
    ```sh
-   git clone https://github.com/amit712singhal/Luffy-Logs.git
-   cd Luffy-Logs
+   git clone https://github.com/amit712singhal/Note-Keeper.git
+   cd Note-Keeper
    ```
 
 2. **Open index.html in your web browser**
