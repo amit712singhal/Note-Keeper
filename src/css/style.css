@@ -921,3 +921,12 @@ body {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/* responsive for >768px screen */
+@media (min-width: 768px){
+
+  /* main */
+  .main {
+    padding-inline: var(--spacing-6);
+  }
+}
