@@ -931,7 +931,6 @@ body {
   }
 }
 
-
 /* responsive for >992px screen */
 @media (min-width: 992px) {
 
@@ -970,5 +969,16 @@ body {
 
   .menu-btn, .main .fab {
     display: none;
+  }
+}
+
+/* responsive for >1400px screen */
+@media (min-width: 1400px) {
+
+  /* main */
+  .main {
+    max-width: 1480px;
+    width: 100%;
+    margin-inline: auto;
   }
 }
