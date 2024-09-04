@@ -23,3 +23,8 @@ addEventOnElements( $sidebarTogglers, 'click', () => {
 const /** {HTMLElement} */ $greetElem = document.querySelector( '[data-greeting]' );
 const /** {number} */ currentHour = new Date().getHours();
 $greetElem.textContent = getGreetingMsg(currentHour);
+
+// show current date on home page
+
+const /** {HTMLElement} */ $currentDateElem = document.querySelector( '[data-current-date]' );
+$currentDateElem.textContent = new Date().toDateString().replace(' ',', ');
