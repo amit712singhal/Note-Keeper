@@ -5,7 +5,8 @@
 'use strict';
 
 // Importing the modules
-import { addEventOnElements , getGreetingMsg} from './utils.js';
+import { addEventOnElements, getGreetingMsg } from './utils.js';
+import { Tooltip } from './components/Tooltip.js';
 
 // Toggle sidebar in small screen
 
@@ -17,6 +18,11 @@ addEventOnElements( $sidebarTogglers, 'click', () => {
     $sidebar.classList.toggle( 'active' );
     $overlay.classList.toggle( 'active' );
 } );
+
+// Initialize tooltip behavior for all elements with data-tooltip attribute
+
+const /** {Array<HTMLElement>} */ $tooltipElems = document.querySelectorAll( '[data-tooltip]' );
+$tooltipElems.forEach( $tooltipElem =>  Tooltip( $tooltipElem ) );
 
 // show greeting message on home page
 
