@@ -8,6 +8,7 @@
 import { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable } from './utils.js';
 import { Tooltip } from './components/Tooltip.js';
 import { db } from './db.js';
+import { client } from './client.js';
 
 /**
  * Toggle sidebar in small screen
@@ -17,7 +18,7 @@ const /** {HTMLElement} */ $sidebar = document.querySelector( '[data-sidebar]' )
 const /** {Array<HTMLElement>} */ $sidebarTogglers = document.querySelectorAll( '[data-sidebar-toggler]' );
 const /** {HTMLElement} */ $overlay = document.querySelector( '[data-sidebar-overlay]' );
 
-addEventOnElements( $sidebarTogglers, 'click', () =>
+addEventOnElements( $sidebarTogglers, 'click', function ()
 {
   $sidebar.classList.toggle( 'active' );
   $overlay.classList.toggle( 'active' );
@@ -77,6 +78,8 @@ const showNotebookField = function ()
   $navItemField.addEventListener( 'keydown', createNotebbok );
 }
 
+$addNotebookBtn.addEventListener( 'click', showNotebookField );
+
 /**
  *
  * @param {KeyboardEvent} e
@@ -86,8 +89,21 @@ const createNotebbok = function ( e )
   if ( e.key === 'Enter' )
   {
     // Store new created notebook
-    db.post.notebook( this.textContent || 'Untitled'); //this: $navItemField
+    const /** {Object} */ notebookData = db.post.notebook( this.textContent || 'Untitled' ); //this: $navItemField
+    this.parentElement.remove();
+
+    // Render navItem
+    client.notebook.create( notebookData );
   }
 }
 
-$addNotebookBtn.addEventListener( 'click', showNotebookField );
+/**
+ * Load all notebooks
+ */
+const renderExistedNotebooks = function ()
+{
+  const /** {Array} */ notebookList = db.get.notebook();
+  client.notebook.read(notebookList);
+}
+
+renderExistedNotebooks();
