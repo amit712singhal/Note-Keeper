@@ -31,9 +31,8 @@ const getGreetingMsg = function ( currentHour )
   const /** {string} */ greeting =
     currentHour < 5 ? 'Night' :
       currentHour < 12 ? 'Morning' :
-        currentHour < 15 ? 'Noon' :
-          currentHour < 17 ? 'Afternoon' :
-            currentHour < 20 ? 'Evening' : 'Night';
+        currentHour < 18 ? 'Afternoon' :
+          currentHour < 21 ? 'Evening' : 'Night';
   return `Good ${ greeting }`;
 }
 
@@ -55,23 +54,19 @@ const activeNotebook = function ()
 /**
  * @param {HTMLElement} $element
  */
-const makeElemEditable = function ($element)
+const makeElemEditable = function ( $element )
 {
-  $element.setAttribute('contenteditable', 'true');
+  $element.setAttribute( 'contenteditable', 'true' );
   $element.focus();
-  document.execCommand('selectAll', false, null);
-  $element.addEventListener('keydown', function (e)
-  {
-    if (e.key === 'Enter')
-    {
-      e.preventDefault();
-      this.blur();
-    }
-  });
-  $element.addEventListener('blur', function ()
-  {
-    this.removeAttribute('contenteditable');
-  });
 }
 
-export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable };
+/**
+ *
+ * @returns {string}
+ */
+const generateID = function ()
+{
+  return new Date().getTime().toString();
+}
+
+export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable, generateID };
