@@ -4,7 +4,7 @@
 
 'use strict';
 
-import { generateID } from './utils.js';
+import { generateID, findNotebook } from './utils.js';
 
 // DB Object
 let /** {Object} */ notekeeperDB = {};
@@ -92,10 +92,28 @@ export const db = {
      * @function
      * @returns {Array<Object>}
      */
-    notebook()
+    notebook ()
     {
       readDB();
       return notekeeperDB.notebooks;
     }
   },
+
+  update: {
+    /**
+     *@function
+     * @param {string} notebookId
+     * @param {string} name
+     * @returns {Object}
+     */
+    notebook ( notebookId, name )
+    {
+      readDB();
+      const/**{Object} */ notebook = findNotebook( notekeeperDB, notebookId );
+      notebook.name = name
+      writeDB();
+
+      return notebook;
+    }
+  }
 }
