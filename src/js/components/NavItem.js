@@ -5,7 +5,9 @@
 'use strict';
 
 import { Tooltip } from "./Tooltip.js";
-import { activeNotebook } from "../utils.js";
+import { activeNotebook, makeElemEditable } from "../utils.js";
+import { db } from "../db.js";
+import { client } from "../client.js";
 
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
 
@@ -48,6 +50,29 @@ export const NavItem = function ( id, name )
     activeNotebook.call( this );
   } );
 
+  /**
+   * Edit functionality
+   */
+
+  const /** {HTMLElement} */ $navItemEditBtn = $navItem.querySelector( '[data-edit-btn]' );
+  const /** {HTMLElement} */ $navItemField = $navItem.querySelector( '[data-notebook-field' );
+
+  $navItemEditBtn.addEventListener( 'click', makeElemEditable.bind( null, $navItemField ) );
+
+  $navItemField.addEventListener( 'keydown', function ( event )
+  {
+    if ( event.key === 'Enter' )
+    {
+      this.removeAttribute( 'contenteditable' );
+
+      // Update edited data in database
+      const /** {string} */ updatedNotebookData = db.update.notebook( id, this.textContent );
+
+      // Render updated data
+      client.notebook.update( id, updatedNotebookData );
+
+    }
+  } )
 
   return $navItem;
 }
