@@ -9,6 +9,7 @@ import { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable } 
 import { Tooltip } from './components/Tooltip.js';
 import { db } from './db.js';
 import { client } from './client.js';
+import { NoteModal } from "./components/Modal.js";
 
 /**
  * Toggle sidebar in small screen
@@ -103,7 +104,27 @@ const createNotebbok = function ( e )
 const renderExistedNotebooks = function ()
 {
   const /** {Array} */ notebookList = db.get.notebook();
-  client.notebook.read(notebookList);
+  client.notebook.read( notebookList );
 }
 
 renderExistedNotebooks();
+
+// Create new note
+const /** {Array<HTMLElement} */ $noteCreationBtns = document.querySelectorAll( '[data-note-create-btn]' );
+const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
+
+addEventOnElements( $noteCreationBtns, 'click', function ()
+{
+  const /** {Object} */ modal = NoteModal();
+  modal.open();
+
+  // Handle submission of new note
+  modal.onSubmit( noteObj =>
+  {
+    const /** {string} */ activeNotebookId = document.querySelector( '[data-notebook].active' ).dataset.notebook;
+    const /** {Object} */ noteData = db.post.note( activeNotebookId, noteObj );
+
+    client.note.create( noteData );
+    modal.close();
+  } );
+} );
