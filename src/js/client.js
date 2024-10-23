@@ -6,6 +6,7 @@
 
 import { NavItem } from './components/NavItem.js';
 import { activeNotebook } from './utils.js';
+import { Card } from './components/Card.js';
 
 const /** {HTMLElement} */ $sidebarList = document.querySelector( '[data-sidebar-list]' );
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
@@ -79,6 +80,20 @@ export const client = {
         // $notePanel.innerHTML = '';
       }
       $deletedNotebook.remove();
+    }
+  },
+
+  note: {
+
+    /**
+     *
+     * @param {*} noteData
+     */
+    create ( noteData )
+    {
+      // Append Card to note panel
+      const /** {HTMLElement} */ $card = Card( noteData );
+      $notePanel.appendChild( $card );
     }
   }
 
