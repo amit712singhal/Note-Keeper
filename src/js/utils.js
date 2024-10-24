@@ -110,5 +110,18 @@ const getRelativeTime = function ( milliseconds )
         `${ day } day ago`;
 }
 
+const findNote = ( db, noteId ) =>
+{
+  let note;
+  for ( const notebook of db.notebooks )
+  {
+    note = notebook.notes.find( note => note.id === noteId );
+    if ( note )
+    {
+      break;
+    }
+  }
+  return note;
+}
 
-export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable, generateID, findNotebook, findNotebookIndex, getRelativeTime };
+export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable, generateID, findNotebook, findNotebookIndex, getRelativeTime, findNote };
