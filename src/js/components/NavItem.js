@@ -49,6 +49,11 @@ export const NavItem = function ( id, name )
   {
     $notePanelTitle.textContent = name;
     activeNotebook.call( this );
+
+    const /** {Array} */ noteList = db.get.note( this.dataset.notebook );
+    client.note.read( noteList );
+    
+
   } );
 
   /**
