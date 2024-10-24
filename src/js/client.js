@@ -11,6 +11,21 @@ import { Card } from './components/Card.js';
 const /** {HTMLElement} */ $sidebarList = document.querySelector( '[data-sidebar-list]' );
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
 const /** {HTMLElement} */ $notePanel = document.querySelector( '[data-note-panel]' );
+const /** {Array<HTMLElement></HTMLElement>} */ $noteCreateBtns = document.querySelectorAll( '[data-note-create-btn]' );
+const /** {string} */ emptyNotesTemplate = `
+      <div class="empty-notes">
+        <span class="material-symbols-rounded" aria-hidden="true">note_stack</span>
+        <div class="text-headline-small">No notes</div>
+      </div>
+`;
+
+const disableNoteCreateBtns = function ( isThereAnyNotebook )
+{
+  $noteCreateBtns.forEach( $item =>
+  {
+    $item[isThereAnyNotebook ? 'removeAttribute' : 'setAttribute']( 'disabled', '' );
+  } );
+}
 
 /**
    * The client object manages interaction with the UI.
@@ -30,6 +45,8 @@ export const client = {
       $sidebarList.appendChild( $navItem );
       activeNotebook.call( $navItem );
       $notePanelTitle.textContent = notebookData.name;
+      $notePanel.innerHTML = emptyNotesTemplate;
+      disableNoteCreateBtns( true );
     },
 
     /**
@@ -37,6 +54,7 @@ export const client = {
      */
     read ( notebookList )
     {
+      disableNoteCreateBtns( notebookList.length );
       notebookList.forEach( ( notebookData, index ) =>
       {
         const /** {HTMLElement} */ $navItem = NavItem( notebookData.id, notebookData.name );
@@ -77,7 +95,8 @@ export const client = {
       } else
       {
         $notePanelTitle.innerHTML = '';
-        // $notePanel.innerHTML = '';
+        $notePanel.innerHTML = '';
+        disableNoteCreateBtns( false );
       }
       $deletedNotebook.remove();
     }
@@ -102,11 +121,18 @@ export const client = {
    */
     read ( noteList )
     {
-      noteList.forEach( noteData =>
+      if ( noteList.length )
       {
-        const /** {HTMLElement} */ $card = Card( noteData );
-        $notePanel.appendChild( $card );
-      } );
+        $notePanel.innerHTML = '';
+        noteList.forEach( noteData =>
+        {
+          const /** {HTMLElement} */ $card = Card( noteData );
+          $notePanel.appendChild( $card );
+        } );
+      } else
+      {
+        $notePanel.innerHTML = emptyNotesTemplate;
+      }
     }
 
   }
