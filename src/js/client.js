@@ -11,7 +11,7 @@ import { Card } from './components/Card.js';
 const /** {HTMLElement} */ $sidebarList = document.querySelector( '[data-sidebar-list]' );
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
 const /** {HTMLElement} */ $notePanel = document.querySelector( '[data-note-panel]' );
-const /** {Array<HTMLElement></HTMLElement>} */ $noteCreateBtns = document.querySelectorAll( '[data-note-create-btn]' );
+const /** {Array<HTMLElement>} */ $noteCreateBtns = document.querySelectorAll( '[data-note-create-btn]' );
 const /** {string} */ emptyNotesTemplate = `
       <div class="empty-notes">
         <span class="material-symbols-rounded" aria-hidden="true">note_stack</span>
@@ -103,20 +103,8 @@ export const client = {
   },
 
   note: {
-
-    /**
-     *
-     * @param {*} noteData
-     */
     create ( noteData )
     {
-      // Clear empty notes template
-      if ( $notePanel.querySelector('[data-note]'))
-      {
-        $notePanel.innerHTML = '';
-      }
-
-
       // Append Card to note panel
       const /** {HTMLElement} */ $card = Card( noteData );
       $notePanel.appendChild( $card );
