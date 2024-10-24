@@ -6,7 +6,7 @@
 
 import { Tooltip } from "./Tooltip.js";
 import { getRelativeTime } from "../utils.js";
-import { NoteModal } from "./Modal.js";
+import { DeleteConfirmModal, NoteModal } from "./Modal.js";
 import { db } from "../db.js";
 import { client } from "../client.js";
 
@@ -32,7 +32,7 @@ export const Card = function ( noteData )
 
             <span class="card-time text-label-large">${ getRelativeTime( postedOn ) }</span>
 
-            <button class="icon-btn large" aria-label="Delete note" data-tooltip="Delete note">
+            <button class="icon-btn large" aria-label="Delete note" data-tooltip="Delete note" data-delete-btn>
               <span class="material-symbols-rounded" aria-hidden="true">delete</span>
               <div class="state-layer"></div>
             </button>
@@ -58,7 +58,29 @@ export const Card = function ( noteData )
       // Update note in UI
       client.note.update( id, updatedData );
       modal.close();
-    })
+    } )
+  } );
+
+  /**
+   * Delete note functionality
+   */
+  const /** {HTMLElement} */ $deleteBtn = $card.querySelector( '[data-delete-btn]' );
+  $deleteBtn.addEventListener( 'click', function ( event )
+  {
+    event.stopImmediatePropagation();
+    const /** {Object} */ modal = DeleteConfirmModal( title );
+    modal.open();
+    modal.onSubmit( function ( isConfirm )
+    {
+      if ( isConfirm )
+      {
+        const /** {Array} */ existedNotes = db.delete.note( notebookId, id );
+
+        // Update UI
+        client.note.delete( id, existedNotes.length );
+      }
+      modal.close();
+    } );
   } );
 
   return $card;
