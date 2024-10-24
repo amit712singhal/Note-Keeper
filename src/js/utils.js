@@ -124,4 +124,15 @@ const findNote = ( db, noteId ) =>
   return note;
 }
 
-export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable, generateID, findNotebook, findNotebookIndex, getRelativeTime, findNote };
+/**
+ *
+ * @param {*} notebook
+ * @param {*} noteId
+ * @returns
+ */
+const findNoteIndex = function ( notebook, noteId )
+{
+  return notebook.notes.findIndex( note => note.id === noteId );
+}
+
+export { addEventOnElements, getGreetingMsg, activeNotebook, makeElemEditable, generateID, findNotebook, findNotebookIndex, getRelativeTime, findNote, findNoteIndex };
