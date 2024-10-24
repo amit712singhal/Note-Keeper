@@ -110,6 +110,13 @@ export const client = {
      */
     create ( noteData )
     {
+      // Clear empty notes template
+      if ( $notePanel.querySelector('[data-note]'))
+      {
+        $notePanel.innerHTML = '';
+      }
+
+
       // Append Card to note panel
       const /** {HTMLElement} */ $card = Card( noteData );
       $notePanel.appendChild( $card );
@@ -133,6 +140,13 @@ export const client = {
       {
         $notePanel.innerHTML = emptyNotesTemplate;
       }
+    },
+
+    update ( noteId, noteData )
+    {
+      const /** {HTMLElement} */ $oldCard = document.querySelector( `[data-note="${ noteId }"]` );
+      const /** {HTMLElement} */ $newCard = Card( noteData );
+      $notePanel.replaceChild( $newCard, $oldCard );
     }
 
   }
