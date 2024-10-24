@@ -23,7 +23,7 @@ const disableNoteCreateBtns = function ( isThereAnyNotebook )
 {
   $noteCreateBtns.forEach( $item =>
   {
-    $item[isThereAnyNotebook ? 'removeAttribute' : 'setAttribute']( 'disabled', '' );
+    $item[ isThereAnyNotebook ? 'removeAttribute' : 'setAttribute' ]( 'disabled', '' );
   } );
 }
 
@@ -103,11 +103,22 @@ export const client = {
   },
 
   note: {
+
+    /**
+     *
+     * @param {*} noteData
+     */
     create ( noteData )
     {
+      // Clear empty notes template
+      if ( !$notePanel.querySelector( '[data-note]' ) )
+      {
+        $notePanel.innerHTML = '';
+      }
+
       // Append Card to note panel
       const /** {HTMLElement} */ $card = Card( noteData );
-      $notePanel.appendChild( $card );
+      $notePanel.prepend( $card );
     },
 
     /**
@@ -130,11 +141,32 @@ export const client = {
       }
     },
 
+    /**
+     *
+     * @param {*} noteId
+     * @param {*} noteData
+     */
     update ( noteId, noteData )
     {
       const /** {HTMLElement} */ $oldCard = document.querySelector( `[data-note="${ noteId }"]` );
       const /** {HTMLElement} */ $newCard = Card( noteData );
       $notePanel.replaceChild( $newCard, $oldCard );
+    },
+
+    /**
+     *
+     * @param {*} noteId
+     * @param {*} isNoteExists
+     */
+    delete ( noteId, isNoteExists )
+    {
+      const /** {HTMLElement} */ $deletedCard = document.querySelector( `[data-note="${ noteId }"]` );
+      $deletedCard.remove();
+
+      if ( !isNoteExists )
+      {
+        $notePanel.innerHTML = emptyNotesTemplate;
+      }
     }
 
   }
