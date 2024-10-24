@@ -94,7 +94,21 @@ export const client = {
       // Append Card to note panel
       const /** {HTMLElement} */ $card = Card( noteData );
       $notePanel.appendChild( $card );
+    },
+
+    /**
+   *
+   * @param {*} noteList
+   */
+    read ( noteList )
+    {
+      noteList.forEach( noteData =>
+      {
+        const /** {HTMLElement} */ $card = Card( noteData );
+        $notePanel.appendChild( $card );
+      } );
     }
+
   }
 
 }
