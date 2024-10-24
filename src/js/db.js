@@ -100,7 +100,7 @@ export const db = {
         ... object,
         postedOn: new Date().getTime()
       }
-      
+
       notebook.notes.unshift( noteData );
       writeDB();
 
@@ -119,6 +119,13 @@ export const db = {
     {
       readDB();
       return notekeeperDB.notebooks;
+    },
+
+    note ( notebookId )
+    {
+      readDB();
+      const /** {Object} */ notebook = findNotebook( notekeeperDB, notebookId );
+      return notebook.notes;
     }
   },
 
