@@ -11,9 +11,7 @@ import { db } from './db.js';
 import { client } from './client.js';
 import { NoteModal } from "./components/Modal.js";
 
-/**
- * Toggle sidebar in small screen
- */
+// -------- Toggle sidebar in small screen --------
 
 const /** {HTMLElement} */ $sidebar = document.querySelector( '[data-sidebar]' );
 const /** {Array<HTMLElement>} */ $sidebarTogglers = document.querySelectorAll( '[data-sidebar-toggler]' );
@@ -111,7 +109,6 @@ renderExistedNotebooks();
 
 // Create new note
 const /** {Array<HTMLElement} */ $noteCreationBtns = document.querySelectorAll( '[data-note-create-btn]' );
-const /** {HTMLElement} */ $notePanelTitle = document.querySelector( '[data-note-panel-title]' );
 
 addEventOnElements( $noteCreationBtns, 'click', function ()
 {
@@ -128,3 +125,16 @@ addEventOnElements( $noteCreationBtns, 'click', function ()
     modal.close();
   } );
 } );
+
+// Render existing notes
+const renderExistedNote = function ()
+{
+  const /** {string | undefined} */ activeNotebookId = document.querySelector( '[data-notebook].active' )?.dataset.notebook;
+  if ( activeNotebookId )
+  {
+    const /** {Array<Object>} */ noteList = db.get.note( activeNotebookId );
+    client.note.read( noteList );
+  }
+}
+
+renderExistedNote();
