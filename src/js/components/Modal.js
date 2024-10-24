@@ -13,7 +13,7 @@ $overlay.classList.add( 'overlay', 'modal-overlay' );
  * @param {*} text
  * @param {*} time
  */
-const NoteModal = function ( title = 'Unitiled', text = 'Add your note ...', time = '' )
+const NoteModal = function ( title = '', text = 'Add your note ...', time = '' )
 {
   const /** {HTMLElement} */ $modal = document.createElement( 'div' );
   $modal.classList.add( 'modal' );
