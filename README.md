@@ -1,4 +1,4 @@
-<p align="center"><img align="center" width="280" src="./src/images/logo-dark.svg"/></p>
+<p align="center"><img align="center" width="280" src="./src/images/logo-dark.svg#gh-dark-mode-only"/></p>
 <p align="center"><img align="center" width="280" src="./src/images/logo-light.svg#gh-light-mode-only"/></p>
 <h3 align="center">Notekeeper - Your Everyday Notes | Effortless Note-Taking</h3>
 <hr>
