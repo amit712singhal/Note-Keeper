@@ -17,12 +17,6 @@ Notekeeper is a simple note-taking app that helps you to take notes effortlessly
 
 Check out the live demo [here](https://amit712singhal.github.io/Note-Keeper/).
 
-## Preview
-
-### Desktop
-
-<!-- ![Destop Preview](public/images/demo.png) -->
-
 <details>
      <summary><h2>Table of Contents</h2></summary>
 
