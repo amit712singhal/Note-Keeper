@@ -1,6 +1,6 @@
 <p align="center"><img align="center" width="280" src="./src/images/logo-dark.svg#gh-dark-mode-only"/></p>
 <p align="center"><img align="center" width="280" src="./src/images/logo-light.svg#gh-light-mode-only"/></p>
-<h3 align="center">Notekeeper - Your Everyday Notes | Effortless Note-Taking</h3>
+<h3 align="center">Notekeeper - Your Everyday Notes</h3>
 <hr>
 
 <div align="center">
@@ -13,18 +13,21 @@
 <img src="https://custom-icon-badges.demolab.com/github/last-commit/amit712singhal/Note-Keeper?label=last%20commit&labelColor=302d41&color=ffefd5&logoColor=white&logo=people&style=for-the-badge"/>
 </div>
 
-Notekeeper is a simple note-taking app that helps you to take notes effortlessly.
+Notekeeper is a simple note-taking web-app that helps you to take notes effortlessly.
 
 Check out the live demo [here](https://amit712singhal.github.io/Note-Keeper/).
 
-<details>
-     <summary><h2>Table of Contents</h2></summary>
+## Preview
+<img src="./src/images/preview/preview-Desktop.gif" alt="Preview of Notekeeper">
 
-- [Preview](#preview)
-  - [Desktop](#desktop)
+<details>
+     <summary><h3>Table of Contents</h3></summary>
+
 - [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+- [Contribution](#contributing)
 - [Connect with Me](#connect-with-me)
 - [License](#license)
 
@@ -45,27 +48,30 @@ To run this project locally, follow these steps:
 
       You can either open the index.html file directly in your browser or use a local server like [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode to serve the files.
 
-<!-- ## Usage
+## Usage
 
-1. **Grant location permission**
+1. **Add a new note**
 
-     Once you've opened the application, it will request access to your device's location. Grant permission by clicking "Allow" or "Grant Access".
+   Open the application and start adding your notes by creating the notebook and clicking the "New Note" button. Each note will appear as a card in the notebook.
 
-2. **View current weather**
+2. **Edit existing notes**
 
-     After granting permission, the application will display the current weather information for your location, including temperature, humidity, wind speed, and more.
+   You can edit any existing note by clicking the note. Make your changes and save them.
 
-3. **Search for weather updates**
+3. **Delete a note**
 
-    To view the weather for a different location, enter the location name or city in the search bar and press Enter. The application will fetch and display the weather information for the searched location. -->
+   Remove unwanted notes by clicking the "Delete" icon on the respective note card.
 
-<!-- ## Features
+5. **Mobile-friendly**
 
-- Real-time weather updates
-- User-friendly interface
-- Detailed weather information
-- Supports multiple weather parameters like temperature, humidity, wind speed, etc.
-- Easy access to weather data for the current location -->
+   Access your notes on the go with a fully responsive design optimized for all screen sizes.
+
+## Features
+
+- Create and Manage Notes
+- Responsive Design
+- Light and Dark Modes
+- Effortless Usability
 
 ## Technologies Used
 
@@ -75,7 +81,17 @@ To run this project locally, follow these steps:
      <img src="https://custom-icon-badges.herokuapp.com/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
 </div>
 
-## Contributing
+### Thanks to all Stargazers ⭐️
+
+<a href="https://star-history.com/#amit712singhal/note-keeper&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=amit712singhal/note-keeper&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=amit712singhal/note-keeper&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=amit712singhal/note-keeper&type=Date" />
+ </picture>
+</a>
+
+## Contribution
 
 Contributions to this project are welcome! If you find any bugs or have suggestions for improvements, please create an issue or submit a pull request.
 
